@@ -1,3 +1,3 @@
 # Monte-Carlo
 
-Here you can find little projects about Monte-Carlo simulation
+This repository contains several mini-projects based on Monte Carlo simulations.
