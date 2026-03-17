@@ -1,16 +1,3 @@
-"""
-1) Simulare utilizzando il metodo MonteCarlo la distribuzione dell'energia dei fotoni gamma emessi da un AGN (Active Galactic Nuclei) che segue una distribuzione:
-
- => F(E) = A * E^{- G}  => ( G = GAMMA)
-
-    dove "E" è l'energia del fotone gamma e "G" è l'indice spettrale che vale: G = 1.8.
-   
-    L'energia dei fotoni gamma varia tra E_min = 10 e E_max = 100.
-   
-2) Simula inoltre la risposta di un rivelatore di energia di fotoni con una risoluzione in energia del 10%.
-
-3) Si sovrappongano i due istogrammi ottenuti.
-"""
 
 import math as ma
 from ROOT import TRandom3
@@ -57,9 +44,7 @@ while len(Energies) < N: # => questo ciclo continua finché non si ha una lista 
     if y < f_E:
         Energies.append(E)
 
-'''==================
-       PARTE 2
-=================='''
+##################
 
 # Per simulare la risposta di un rivelatore è piuttosto semplice, bisogna perturbare ogni energia vera E con una distribuzione gaussiana, che simuli l’imprecisione del rivelatore. Cosa significa con una risoluzione dell'enerigia del 10%? Ovvero con:
 
@@ -71,10 +56,6 @@ for E in Energies:
     EnergiesMisurate.append(E_misurata)
 
 # => gaussiana con media E e sigma il 10%
-
-'''==================
-       PARTE 3
-=================='''
 
 #===================#
 # == Istogramma  == #
