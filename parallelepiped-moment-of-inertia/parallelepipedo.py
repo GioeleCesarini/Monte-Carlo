@@ -1,13 +1,3 @@
-'''
-1) Si calcoli utilizzando il metodo di MonteCarlo il momento di inerzia di un parallelepipedo con lati di lunghezza:
-    *) a = 4
-    *) b = 2
-    *) c = 3
-    in unità arbitrarie. Si consideri la densità del parallelepipedo costante: rho_0 = 3 (in unità arbitrarie) rispetto ad un asse passante per un estremo e lo si confronti con il valore noto.
-
-2) Nel caso in cui il parallelepipedo invece abbia densità variabile linearmente in una direzione a scelta, si calcolino i momenti di inerzia rispetto all'asse ortogonale ed a quello parallelo alla direzione di variabilità della densità.
-'''
-
 #================#
  #====Teoria====#  # => Prima di iniziare vediamo alcuni punti sulla teoria dietro all'eserzio
 #================#
@@ -30,11 +20,6 @@
 # Per un solido di cui bisogna calcolare il volume è chiaro il ragionamento, monte carlo conta quanti punti cadono all'interno del solido. Ma in questo caso è leggermente diverso poiché non vogliamo il volume bensì il momento di inerzia, allora sappi che in generale per un integrale del tipo:
 # -> int_V f(r) dV, monte carlo ci aiuta ad approssimarlo come somma del tipo: V/N * sum_{i = 0}^{i = N} f(r_i) => possiamo dire che l’approccio base del metodo Monte Carlo: si approssima un integrale come media di campioni moltiplicata per il volume.
 # Allora nel nostro caso: 3V/N * sum_{i = 0}^{i = N} (x^2 + y^2), quindi nel ciclo mettiamo la somma, fuori dal ciclo moltiplicheremo la somma per 3V/N, con 3 = rho0
-#=====================#
-
-# CASO 2
-# => rho =
-
 #=====================#
 
 import math as ma
@@ -62,10 +47,6 @@ V = a * b * c
 
 # Numero di punti monte carlo
 N = 10000
-
-'''==================
-       PARTE 1
-=================='''
 
 # Variabile per accumulare la somma:
 
@@ -125,11 +106,6 @@ if scostamento < 2 * erroreMC:
     print("✅ La stima Monte Carlo è compatibile con il valore teorico (entro 2σ)")
 else:
     print("⚠️ La stima NON è compatibile con il valore teorico (oltre 2σ)")
-
-
-'''==================
-       PARTE 2
-=================='''
 
 sommaMC_NEW_x = 0
 
